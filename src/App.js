@@ -6,7 +6,7 @@ import Page from './components/Page';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer';
 
-export const Context = createContext()
+export const MainContext = createContext()
 const initNav = {
   book: 'Genesis',
   chapter: 1,
@@ -17,7 +17,7 @@ function App() {
   const [nav, setNav] = useState(initNav)
   const [error, setError] = useState('')
   const [page, setPage] = useState([])
-  const [books, setBooks] = useState()
+  
   
   function getChapter(value) {
     setNav({...nav, chapter: value})
@@ -53,20 +53,19 @@ function App() {
 
   return (
     <div className="App">
-      <Context.Provider
+      <MainContext.Provider
         value={{
           nav,
           page,
-          books,
           getBook,
           getChapter
         }}
       >
 
-       <Navbar nav={nav} getBook={getBook} getChapter={getChapter}/> 
-      <Page paper={page} />
-      <Footer nav={nav} getBook={getBook} getChapter={getChapter}/>
-      </Context.Provider>
+       <Navbar /> 
+      <Page />
+      <Footer />
+      </MainContext.Provider>
     </div>
   );
 }

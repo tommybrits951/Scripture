@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context } from '../App'
+import { MainContext } from '../App'
 function Footer() {
-    const { nav, getChapter, getBook } = useContext(Context)
+    const { nav, getChapter, getBook } = useContext(MainContext)
     function pageTurn(e) {
         const {value} = e.target
         if (value === 0) {

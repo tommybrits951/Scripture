@@ -1,17 +1,18 @@
 import React, { useContext } from 'react'
-import { Context } from '../App'
+import { MainContext } from '../App'
 
 function Page() {
-    const { paper } = useContext(Context)
+    const { page } = useContext(MainContext)
     return(
 <div>
-    {paper  ? 
+    {page  ? 
     <div className='container'>
         <div className='row'>
             <div className='col mt-5'>
-                {paper.map((txt, idx) => {
+                <h1>{page[0].book}</h1>
+                {page.map((txt, idx) => {
                     return(
-                        <p key={idx}>{txt.verse}</p>
+                        <p className='verse' key={idx}>{txt.verse}</p>
                     )
                 })}
             </div>

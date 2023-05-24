@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context } from '../App'
+import { MainContext } from '../App'
 function Navbar() {
-    const { nav, getChapter, getBook } = useContext(Context)
+    const { nav, getChapter, getBook } = useContext(MainContext)
 
     function chapterHandle(e) {
         const {value} = e.target
