@@ -15,25 +15,31 @@ function Navbar() {
     }
     return(
         <nav className='navbar d-flex justify-content-around bg-dark fixed-top'>
+            <label className='form-label text-light'>
+            Book
             <select
                 name='book'
                 onChange={bookHandle}
-            >
+                className='ms-2'
+                >
                 {nav.books.map((bk, idx) => {
                     return(
                         <option key={idx} value={bk}>{bk}</option>
-                    )
-                })}
+                        )
+                    })}
                 
 
             </select>
-            <select onChange={chapterHandle}>
+                    </label>
+                    <label className='form-label text-light'>Chapter
+            <select onChange={chapterHandle} className='ms-2'>
                 {nav.chapters.map((ch, idx) => {
                     return(
                         <option key={idx} value={ch}>{ch}</option>
-                    )
-                })}
+                        )
+                    })}
             </select>
+                    </label>
         </nav>
     )
 }

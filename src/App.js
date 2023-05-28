@@ -17,7 +17,7 @@ function App() {
   const [nav, setNav] = useState(initNav)
   const [error, setError] = useState('')
   const [page, setPage] = useState([])
-  
+  const [book, setBook] = useState([])
   
   function getChapter(value) {
     setNav({...nav, chapter: value})
@@ -43,8 +43,7 @@ function App() {
 
   }
 
-
-
+  
 
   useEffect(() => {
     getChapter(nav.chapter)

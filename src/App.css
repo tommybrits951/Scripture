@@ -12,8 +12,9 @@ select {
 .container {
   text-align: center;
 }
-h2 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 .verse {
   font-family: "Californian FB", "TrueType";

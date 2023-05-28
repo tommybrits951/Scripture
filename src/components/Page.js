@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 import { MainContext } from '../App'
 
 function Page() {
-    const { page } = useContext(MainContext)
+    const { page, nav } = useContext(MainContext)
+    
     return(
 <div>
     {page  ? 
     <div className='container'>
         <div className='row'>
-            <div className='col mt-5'>
-                <h1>{page[0].book}</h1>
+            <div className='col mt-5 mb-5 pb-4'>
+                <h1>{nav.book}</h1>
+                <h3>Chapter {nav.chapter}</h3>
                 {page.map((txt, idx) => {
                     return(
                         <p className='verse' key={idx}>{txt.verse}</p>
